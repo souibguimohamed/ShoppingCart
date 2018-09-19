@@ -1,0 +1,18 @@
+.navigationBar{
+    min-height: 120px;
+    background: #2980b9;
+}
+.Title{
+    float: left;
+    text-align: left;
+    font-size: 45px;
+    font-weight: 500px;
+    color:white;
+    padding-top: 25px;
+    padding-left: 25px;
+    text-shadow: 
+                -1px -1px 0 #000,  
+                 1px -1px 0 #000,
+                -1px  1px 0 #000,
+                 1px  1px 0 #000;
+}
