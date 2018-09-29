@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
-import Cart from './Cart';
-import './Navigation.css';
+import CartHeader from './CartHeader';
 
-class Navigation extends Component {
-  render() {
-    const NumberOfItem=this.props.NumberOfItem;
-    const TotalPrice = this.props.TotalPrice;
-    return (
-      <div className="navigationBar">
-          <div className="Title">Shopping Cart React</div>
-          <Cart NumberOfItem={NumberOfItem}
-                TotalPrice={TotalPrice}/>
-      </div> 
-    );
-  }
+/*===== Style Components Imports =====*/
+import {NavContainer,Title} from './Style/NavigationStyling';
+/*===== Style Components Imports =====*/
+
+class Navigation extends Component{
+    render(){
+        return(
+            <NavContainer>
+                <Title>Shopping Cart Website</Title>
+                <CartHeader TheState={this.props.TheState}/>
+            </NavContainer>
+        )
+    }
 }
-
 export default Navigation;
