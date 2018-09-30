@@ -30,10 +30,14 @@ class CartHeader extends Component{
     }
     render(){
         return(
-            <CartHeaderContainer>
+            <CartHeaderContainer >
                 <Infos>nbre of items: {this.numberOfItems()} <br/>Total Price: {this.totalPrice()}$</Infos>
-                <TheIcon src={icon} alt="Cart Icon"/>
-                <CartBox TheState={this.props.TheState}/>
+                <TheIcon src={icon} 
+                        alt="Cart Icon" 
+                        onClick={()=>{this.props.changeDisplayedBox()}}/>
+                <CartBox TheState={this.props.TheState}
+                         removeFromCart={this.props.removeFromCart}
+                         />
             </CartHeaderContainer>
         )
     }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 const NavContainer = styled.div`
 min-height:100px;
-background-color:#16a085;
+background-color:#27ae60;
 `
 const Title = styled.h1`
 margin:0; 

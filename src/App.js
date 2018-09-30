@@ -7,13 +7,14 @@ class App extends Component {
     super(props);
     this.state={
       items:[
-        {id:1,name:"souris",price:7,itemStock:1},
-        {id:2,name:"clavier",price:10,itemStock:20},
-        {id:3,name:"laptop",price:5,itemStock:7},
-        {id:4,name:"pc gamer",price:17,itemStock:19},
-        {id:5,name:"modem",price:15,itemStock:20}
+        {id:1,name:"Souris",price:7,itemStock:1,img:"1.jpg"},
+        {id:2,name:"Clavier",price:10,itemStock:20,img:"1.jpg"},
+        {id:3,name:"Laptop",price:5,itemStock:7,img:"1.jpg"},
+        {id:4,name:"Pc Gamer",price:17,itemStock:19,img:"1.jpg"},
+        {id:5,name:"Modem",price:15,itemStock:20,img:"1.jpg"}
       ],
-      clientItems:[]
+      clientItems:[],
+      IsOpen:false
     }
   }
   ///////-------------- Start Function handleAddToCart --------------///////
@@ -61,6 +62,39 @@ class App extends Component {
     });
     }
   ///////-------------- End Function handleAddToCart --------------///////
+  ///////-------------- Start Function removeFromCart --------------///////
+  removeFromCart =(TheSelectedID)=>{
+    let FinalArray=[];
+    FinalArray=this.state.clientItems.filter((item)=>{
+      if(item.productId !==TheSelectedID){
+        return item;
+      }
+      return null;
+    });
+    this.setState({
+      clientItems:FinalArray
+    })
+    //we add the quantity of the selected item to items state
+    FinalArray=[];
+    FinalArray=this.state.items.filter((item)=>{
+      if(item.id ===TheSelectedID){
+        item.itemStock++;
+        return item;
+      }
+      return item;
+    });
+    this.setState({
+      items:FinalArray
+    })
+  }
+  ///////-------------- End Function removeFromCart --------------///////
+  ///////-------------- Start Function changeDisplayedBox --------------///////
+  changeDisplayedBox =()=>{
+    this.setState({
+      IsOpen:!this.state.IsOpen
+    })
+  }
+  ///////-------------- End Function changeDisplayedBox --------------///////
 
   render() {
 
@@ -68,15 +102,18 @@ class App extends Component {
     const numberOfProducts = this.state.items.length;
     const Items = [];
     for (let index = 1; index < numberOfProducts+1; index++) {
-      Items.push(<Item TheState={this.state} productID={index} handleAddToCart={this.handleAddToCart}/>);
+      Items.push(<Item  key={index} TheState={this.state} productID={index} handleAddToCart={this.handleAddToCart}/>);
     }
     /**===== End Of The Block Generation =====**/
 
     return (
-    <AppContainer>
-      <Navigation TheState={this.state} />
-      {Items}
-    </AppContainer>
+      <AppContainer >
+        <Navigation TheState={this.state} 
+                    removeFromCart={this.removeFromCart} 
+                    changeDisplayedBox={this.changeDisplayedBox}
+                    />
+        {Items}
+      </AppContainer>
     );
   }
 }
