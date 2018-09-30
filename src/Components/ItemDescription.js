@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Redirect} from 'react-router-dom';
 
-import img from '../images/1.jpg';
+//import img from '../images/1.jpg';
 import {Thumbnail,ItemInfos,ItemContact,ProductName,ProductPrice,ProductStock,ContactTitle,ContactDetails} from './Style/ItemDescriptionStyling';
 class ItemDescription extends Component{
     render(){
@@ -22,7 +22,8 @@ class ItemDescription extends Component{
         const TheState=this.props.TheState;
         return(
             <div>
-                <Thumbnail src={img}/>
+                <Thumbnail src={process.env.PUBLIC_URL +"/images/"+this.props.TheState.items[this.props.productID].img}/>
+                
                 <ItemInfos>
                     <ProductName>{TheState.items[ProductID-1].name}</ProductName>
                     <ProductPrice>{TheState.items[ProductID-1].price}$</ProductPrice>

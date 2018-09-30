@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CartBox from './CartBox';
-import icon from '../images/icon.png';
+//import icon from '../public/images/icon.png';
+//src={ +"/images/"+this.props.TheState[this.props.productID].img}
 
 /*===== Style Components Imports =====*/
 import {CartHeaderContainer,Infos,TheIcon} from './Style/CartHeaderStyling';
@@ -32,7 +33,7 @@ class CartHeader extends Component{
         return(
             <CartHeaderContainer >
                 <Infos>nbre of items: {this.numberOfItems()} <br/>Total Price: {this.totalPrice()}$</Infos>
-                <TheIcon src={icon} 
+                <TheIcon 
                         alt="Cart Icon" 
                         onClick={()=>{this.props.changeDisplayedBox()}}/>
                 <CartBox TheState={this.props.TheState}

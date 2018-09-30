@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import img from '../images/1.jpg';
+//import img from '../images/1.jpg';
 
 /*===== Style Components Imports =====*/
 import {ItemContainer,Thumbnail,ProductName,ProductPrice,AddToCartBtn,LinkBox} from './Style/ItemStyling';
@@ -41,6 +41,7 @@ imageOfTheItem = (id)=>{
             result=item.img;
         }
     });
+
     return result;
     }
 ///////-------------- Start Function To get images --------------///////
@@ -49,7 +50,7 @@ imageOfTheItem = (id)=>{
         return(
             <ItemContainer>  
                 <LinkBox to={"/items/"+this.props.productID} >              
-                <Thumbnail src={img}/>
+                <Thumbnail />
                 <ProductName>{this.TitleOfTheItem(this.props.productID)}</ProductName>
                 <ProductPrice>{this.PriceOfTheItem(this.props.productID)}$</ProductPrice>
                 </LinkBox>
