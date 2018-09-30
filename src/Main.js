@@ -10,7 +10,7 @@ class Main extends Component{
         this.state={
           items:[
             {id:1,name:"Souris",price:7,itemStock:1,img:"1.jpg"},
-            {id:2,name:"Clavier",price:10,itemStock:20,img:"1jpg"},
+            {id:2,name:"Clavier",price:10,itemStock:20,img:"2.jpg"},
             {id:3,name:"Laptop",price:5,itemStock:7,img:"1.jpg"},
             {id:4,name:"Pc Gamer",price:17,itemStock:19,img:"1.jpg"},
             {id:5,name:"Modem",price:15,itemStock:20,img:"1.jpg"}
