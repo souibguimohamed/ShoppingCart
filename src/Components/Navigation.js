@@ -9,7 +9,7 @@ class Navigation extends Component{
     render(){ 
         return(
             <NavContainer>
-                <Title>Shopping Cart Website</Title>
+                <Title to="/" >Shopping Cart Website</Title>
                 <CartHeader TheState={this.props.TheState}
                             removeFromCart={this.props.removeFromCart}
                             changeDisplayedBox={this.props.changeDisplayedBox}/>

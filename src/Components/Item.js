@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+
 import img from '../images/1.jpg';
 
 /*===== Style Components Imports =====*/
-import {ItemContainer,Thumbnail,ProductName,ProductPrice,AddToCartBtn} from './Style/ItemStyling';
+import {ItemContainer,Thumbnail,ProductName,ProductPrice,AddToCartBtn,LinkBox} from './Style/ItemStyling';
 /*===== Style Components Imports =====*/
 
 
@@ -46,10 +47,12 @@ imageOfTheItem = (id)=>{
 
     render(){
         return(
-            <ItemContainer>                
+            <ItemContainer>  
+                <LinkBox to={"/items/"+this.props.productID} >              
                 <Thumbnail src={img}/>
                 <ProductName>{this.TitleOfTheItem(this.props.productID)}</ProductName>
                 <ProductPrice>{this.PriceOfTheItem(this.props.productID)}$</ProductPrice>
+                </LinkBox>
                 <AddToCartBtn onClick={()=>{this.props.handleAddToCart(this.props.productID)}}>Add To Cart</AddToCartBtn>
             </ItemContainer>
         )

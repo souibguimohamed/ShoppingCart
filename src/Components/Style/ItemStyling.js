@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 const ItemContainer = styled.div`
 display:inline-block;
 padding: 9px;
@@ -18,11 +19,13 @@ color:white;
 margin:0;
 font-size:27px; 
 text-align:center;
+text-decoration:none!important;
 `
 const ProductPrice=styled.h2`
 color: #c0392b;
 margin:0;
 text-align:center;
+text-decoration:none!important;
 `
 const AddToCartBtn=styled.button`
 padding:7px;
@@ -33,4 +36,8 @@ color:white;
 border:none;
 border-radius:4px;
 `
-export {ItemContainer,Thumbnail,ProductName,ProductPrice,AddToCartBtn};
+const LinkBox = styled(Link)`
+text-decoration:none;
+`
+
+export {ItemContainer,Thumbnail,ProductName,ProductPrice,AddToCartBtn,LinkBox};
